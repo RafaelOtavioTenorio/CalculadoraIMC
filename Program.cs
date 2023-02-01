@@ -46,8 +46,21 @@ namespace CalcularIMC
             {
                 goto valorAltura;
             }
-            
-            Console.WriteLine("IMC = {0}", imc = peso / (altura * altura));            
+
+            imc = peso / (altura * altura);
+            if (imc <= 18.5)
+            {
+                Console.WriteLine("IMC = {0}\nAbaixo do peso.", imc);
+            } else if(imc <= 24.9) 
+            {
+                Console.WriteLine("IMC = {0}\nPeso ideal.", imc);
+            } else if(imc <= 29.9)
+            {
+                Console.WriteLine("IMC = {0}\nAcima do peso.", imc);
+            } else
+            {
+                Console.WriteLine("IMC = {0}\nObesidade.", imc);
+            }                        
             Console.WriteLine("Cálculo concluído com sucesso, deseja calcular novamente? s/n");
             var restart = Console.Read();
             if (restart == 's')
